@@ -11,7 +11,18 @@
   border: solid 1px black;
   position: relative;
   overflow: hidden;
+  /*Customize Background*/
+  background: linear-gradient(#87CEEB, #E0F6FF);
+  border-bottom: 15px solid green;
 }
+
+.clouds{
+  width: 550px;
+  position: absolute;
+  animation: clouds-animation 20s infinite linear;
+}
+
+
 
 .pipe {
   position: absolute;
@@ -25,8 +36,25 @@
   width: 150px;
   position: absolute;
   bottom: 0;
-  animation: jump 500ms infinite ease-in-out;
 }
+
+.jump{
+  animation: jump 700ms infinite ease-out;
+}
+
+/*Animation background*/
+
+@keyframes clouds-animation{
+  from {
+    right: -550px;
+  }
+
+  to{
+    right: 100%;
+  }
+}
+
+/*Animation Pipe*/
 
 @keyframes pipe-animation {
   from {
@@ -38,17 +66,24 @@
   }
 }
 
+
+/*Animation to make Mario Jump*/
+
 @keyframes jump {
   0% {
     bottom: 0;
   }
 
   40% {
-    bottom: 150px;
+    bottom: 180px;
   }
 
   50% {
-    bottom: 180px;
+    bottom: 200px;
+  }
+
+  60% {
+    bottom: 200px;
   }
 
   100% {
